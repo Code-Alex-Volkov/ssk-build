@@ -154,7 +154,6 @@ input[type="submit"] {
 }
 
 .btn_click_green {
-	font-style: 400;
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 170%;
@@ -639,15 +638,17 @@ ul.slick-dots li.slick-active {
 
 /* Button Menu Mobile */
 
-.nav_btn {
-	position: relative;
-	top: 0px;
+
+.nav_btn,
+.btn_land {
+	position: absolute;
+	top: 25px;
 	right: 25px;
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
 	transition: all 0.5s;
-	z-index: 600;
+	z-index: 800;
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -680,4 +681,16 @@ ul.slick-dots li.slick-active {
 		background: #474747;
 		border-radius: 2px;
 	}
+}
+
+.btn_land {
+	z-index: 600;
+}
+
+.top_nav {
+	top: 0px;
+	position: fixed;
+	z-index: 999;
+	left: 50%;
+	transform: translateX(-50%);
 }

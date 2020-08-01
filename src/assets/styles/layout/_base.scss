@@ -25,15 +25,17 @@ body {
 	}
 
 	@media (max-width: 768px) {
-		max-width: calc(566px-20px);
+		max-width: calc(596px-20px);
 	}
 
-	@media (max-width: 576px) {
+	@media (max-width: 606px) {
 		max-width: 386px;
 	}
 
-	@media (max-width: 400px) {
-		width: calc(100%-20px);
+	@media (max-width: 416px) {
+		width: calc(100%-30px);
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
