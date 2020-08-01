@@ -1,28 +1,3 @@
-function fun1() {
-	var rng = document.getElementById('r1'); //rng - это Input
-	var p = document.getElementById('one1'); // p - абзац
-	var div = document.getElementById('numb1'); // p - абзац
-	p.innerHTML = rng.value;
-	p.style.width = rng.value * '0.00008137' + 'px';
-	div.style.width = rng.value * '0.00008137' + 'px';
-}
-
-function fun2() {
-	var rng = document.getElementById('r2'); //rng - это Input
-	var p = document.getElementById('one2'); // p - абзац
-	var div = document.getElementById('numb2'); // p - абзац
-	p.innerHTML = rng.value;
-	p.style.width = rng.value * '3.5' + 'px';
-	div.style.width = rng.value * '3.5' + 'px';
-}
-
-function fun3() {
-	var rng = document.getElementById('r3'); //rng - это Input
-	var p = document.getElementById('one3');
-	p.innerHTML = rng.value;
-	p.style.width = rng.value * '11.33333' + 'px';
-}
-
 $(document).ready(function () {
 	'use strict';
 
@@ -36,19 +11,24 @@ $(document).ready(function () {
 			prevArrow: "<div class=\"left\"></div>",
 			nextArrow: "<div class=\"right\"></div>",
 			responsive: [{
-					breakpoint: 993,
+					breakpoint: 1250,
 					settings: {
 						slidesToShow: 2,
 						slidesToScroll: 1
 					}
 				},
 				{
-					breakpoint: 577,
+					breakpoint: 993,
 					settings: {
 						slidesToShow: 1,
 						slidesToScroll: 1,
-						dots: true,
-						arrows: false
+					}
+				}, 
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
 					}
 				}
 			]
@@ -66,8 +46,9 @@ $(document).ready(function () {
 			responsive: [{
 					breakpoint: 993,
 					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						arrows: false
 					}
 				},
 				{
@@ -122,19 +103,18 @@ $(document).ready(function () {
 			prevArrow: "<div class=\"left\"></div>",
 			nextArrow: "<div class=\"right\"></div>",
 			responsive: [{
-					breakpoint: 993,
+					breakpoint: 1250,
 					settings: {
 						slidesToShow: 2,
 						slidesToScroll: 1
 					}
 				},
 				{
-					breakpoint: 577,
+					breakpoint: 993,
 					settings: {
 						slidesToShow: 1,
 						slidesToScroll: 1,
-						dots: true,
-						arrows: false
+						arrows: true
 					}
 				}
 			]
@@ -147,18 +127,16 @@ $(document).ready(function () {
 			infinite: true,
 			slidesToShow: 3,
 			slidesToScroll: 1,
-			appendArrows: $('.news_navigation'),
-			prevArrow: "<div class=\"left\"></div>",
-			nextArrow: "<div class=\"right\"></div>",
 			responsive: [{
 					breakpoint: 993,
 					settings: {
 						slidesToShow: 2,
-						slidesToScroll: 1
+						slidesToScroll: 1,
+						dots: true
 					}
 				},
 				{
-					breakpoint: 577,
+					breakpoint: 768,
 					settings: {
 						slidesToShow: 1,
 						slidesToScroll: 1,
@@ -183,7 +161,7 @@ $(document).ready(function () {
 			responsive: [{
 					breakpoint: 993,
 					settings: {
-						slidesToShow: 2,
+						slidesToShow: 1,
 						slidesToScroll: 1
 					}
 				},
@@ -258,7 +236,7 @@ $(document).ready(function () {
 		}, 800);
 	});
 
-	/*Popup Video*/
+	/* Popup Video */
 	$(function () {
 		$('.popup-modal').magnificPopup({
 			type: 'inline',
@@ -277,5 +255,28 @@ $(document).ready(function () {
 			type: 'iframe'
 		});
 	}
+
+
+	/* Fixed Menu */
+	var h_hght = 580;
+	var h_mrg = 0;
+	$(function () {
+		$(window).scroll(function () {
+			var top = $(this).scrollTop();
+			var elem = $('#top_nav');
+			if (top + h_mrg < h_hght) {
+				elem.css('top', (h_hght - top));
+			} else {
+				elem.css('top', h_mrg);
+			}
+		});
+	});
+
+	/* btn menu */
+	$(".nav_btn").click(function () {
+		$(".nav_btn").toggleClass("nav-active");
+		$(".top_nav_1").toggleClass("nav_mobile");
+		$("body").toggleClass("over_hidden");
+	});
 
 });

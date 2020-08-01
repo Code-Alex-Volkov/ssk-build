@@ -107,6 +107,7 @@
 
 .nav_section {
    height: 80px;
+   width: 100%;
    background: #FFFFFF;
    box-shadow: 0px 6px 12px rgba(2, 2, 2, 0.06);
 
@@ -150,8 +151,12 @@
 }
 
 .location {
-   padding-top: 60px;
+   padding-top: 120px;
    padding-bottom: 60px;
+
+   &.best {
+      padding-top: 60px;
+   }
 
    .wrapper {
       display: flex;
@@ -217,7 +222,15 @@
       .item_slide {
          outline: none;
 
-         img {}
+         img {
+            max-width: 1220px;
+            width: 100%;
+            margin: 0 auto;
+
+            @media (max-width: 1400px) {
+               max-width: 960px;
+            }
+         }
       }
    }
 }
@@ -231,7 +244,8 @@
       outline: none;
 
       img {
-         width: 282px;
+         max-width: 347px;
+         width: 100%;
          object-fit: cover;
          object-position: center;
       }
@@ -240,7 +254,7 @@
          position: absolute;
          bottom: 0;
          left: 0;
-         width: 282px;
+         width: 287px;
          margin-left: 15px;
          background: linear-gradient(180deg, rgba(2, 2, 2, 0.65) 19.96%, rgba(255, 255, 255, 0) 59.59%, rgba(2, 2, 2, 0.3) 100%);
          border-radius: 2px;
@@ -295,8 +309,9 @@
       outline: none;
 
       img {
-         width: 386px;
-         height: 350px;
+         max-width: 386px;
+         width: 100%;
+         height: 100%;
          object-fit: cover;
          object-position: center;
       }
